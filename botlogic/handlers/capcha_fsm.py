@@ -16,7 +16,7 @@ async def get_answer(message: Message, state: FSMContext) -> None:
         await message.answer(text="Верно!")
         await message.answer(text=views.join_message(user))
         await state.clear()
-    elif message.from_user.id == data['new_user_id']:
+    elif message.from_user.id == data["new_user_id"]:
         await message.answer(text="Неверно")
         number = data["try_number"]
         data["messages_list"].append(message.message_id)
@@ -54,7 +54,7 @@ async def on_user_join_request(event: ChatMemberUpdated, state: FSMContext) -> N
         " вычислить результат математического выражения. На решение вам дается 3 минуты.",
     )
     await state.set_state(state=CapchaSteps.asking)
-    #Ограничение по времени
+    # Ограничение по времени
     await sleep(180)
     if (await state.get_state()) == CapchaSteps.asking:
         await event.answer("Время вышло. К сожалению вам не разрешено присоединиться.")

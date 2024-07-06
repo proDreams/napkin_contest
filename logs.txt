@@ -805,3 +805,14 @@ aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: can't
 2024-07-06 16:43:18,353 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
 2024-07-06 16:43:18,983 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
 2024-07-06 16:43:18,985 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308591 is not handled. Duration 69406 ms by bot id=6210998446
+2024-07-06 16:43:26,849 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-06 16:43:26,958 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
+2024-07-06 16:43:33,009 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308596 is handled. Duration 16 ms by bot id=6210998446
+2024-07-06 16:43:33,269 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308595 is handled. Duration 391 ms by bot id=6210998446
+2024-07-06 16:43:36,207 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308598 is handled. Duration 0 ms by bot id=6210998446
+2024-07-06 16:43:44,736 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308599 is handled. Duration 343 ms by bot id=6210998446
+2024-07-06 16:43:48,308 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308600 is handled. Duration 358 ms by bot id=6210998446
+2024-07-06 16:43:55,008 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308601 is handled. Duration 375 ms by bot id=6210998446
+2024-07-06 16:45:41,929 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-06 16:45:42,606 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
+2024-07-06 16:45:42,607 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308597 is not handled. Duration 126531 ms by bot id=6210998446
