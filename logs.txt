@@ -1,0 +1,57 @@
+2024-07-06 07:23:22,486 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-06 07:23:22,599 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
+2024-07-06 07:23:33,721 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308531 is handled. Duration 0 ms by bot id=6210998446
+2024-07-06 07:23:33,954 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308530 is handled. Duration 343 ms by bot id=6210998446
+2024-07-06 07:23:42,610 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308533 is not handled. Duration 0 ms by bot id=6210998446
+2024-07-06 07:23:42,612 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=997308533 by bot id=6210998446
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Traceback (most recent call last):
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\botlogic\handlers\capcha_fsm.py", line 14, in get_answer
+    if int(message.text) == data['answer']:
+       ^^^^^^^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2024-07-06 07:23:42,725 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308532 is handled. Duration 250 ms by bot id=6210998446
+2024-07-06 07:23:53,961 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308534 is handled. Duration 313 ms by bot id=6210998446
+2024-07-06 07:24:25,693 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308536 is handled. Duration 0 ms by bot id=6210998446
+2024-07-06 07:24:25,921 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308535 is handled. Duration 343 ms by bot id=6210998446
+2024-07-06 07:29:26,851 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-06 07:29:27,552 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
