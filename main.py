@@ -3,11 +3,11 @@ import asyncio
 from aiogram import Dispatcher, F
 from aiogram.filters import Command, ChatMemberUpdatedFilter, IS_NOT_MEMBER, IS_MEMBER
 
-from botlogic.handlers import send_file, simple, weather_fsm, payment
+from botlogic.handlers import send_file, simple, weather_fsm, payment, capcha_fsm
 from botlogic.handlers.events import start_bot, stop_bot, on_user_join, on_user_left
 from botlogic.handlers.filter_words import check_message
 from botlogic.settings import bot
-from botlogic.utils.statesform import SendFileSteps, GetWeatherSteps
+from botlogic.utils.statesform import SendFileSteps, GetWeatherSteps, CapchaSteps
 
 
 async def start():
@@ -31,9 +31,16 @@ async def start():
     dp.message.register(weather_fsm.get_weather_command, Command(commands="weather"))
     dp.message.register(weather_fsm.get_by_city, GetWeatherSteps.BY_CITY)
 
+    # капча!
     dp.chat_member.register(
-        on_user_join, ChatMemberUpdatedFilter(IS_NOT_MEMBER >> IS_MEMBER)
+        capcha_fsm.on_user_join_request,
+        ChatMemberUpdatedFilter(IS_NOT_MEMBER >> IS_MEMBER),
     )
+    dp.message.register(capcha_fsm.get_answer, CapchaSteps.asking)
+
+    # dp.chat_member.register(
+    #    on_user_join, ChatMemberUpdatedFilter(IS_NOT_MEMBER >> IS_MEMBER)
+    # )
     dp.chat_member.register(
         on_user_left, ChatMemberUpdatedFilter(IS_MEMBER >> IS_NOT_MEMBER)
     )
