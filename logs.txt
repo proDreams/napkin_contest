@@ -490,3 +490,318 @@ aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: can't
 2024-07-06 10:11:57,149 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308558 is handled. Duration 375 ms by bot id=6210998446
 2024-07-06 10:12:02,067 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308561 is handled. Duration 577 ms by bot id=6210998446
 2024-07-06 10:12:12,075 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308560 is handled. Duration 10735 ms by bot id=6210998446
+2024-07-06 16:30:20,342 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-06 16:30:20,450 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
+2024-07-06 16:30:31,543 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308570 is handled. Duration 0 ms by bot id=6210998446
+2024-07-06 16:30:31,860 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308569 is handled. Duration 453 ms by bot id=6210998446
+2024-07-06 16:30:37,238 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308572 is handled. Duration 531 ms by bot id=6210998446
+2024-07-06 16:33:37,855 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308571 is not handled. Duration 181281 ms by bot id=6210998446
+2024-07-06 16:33:37,856 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=997308571 by bot id=6210998446
+TelegramBadRequest: Telegram server says - Bad Request: can't remove chat owner
+Traceback (most recent call last):
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\botlogic\handlers\capcha_fsm.py", line 65, in on_user_join_request
+    await bot.ban_chat_member(chat_id, user_id)
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\bot.py", line 778, in ban_chat_member
+    return await self(call, request_timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\bot.py", line 482, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 189, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: can't remove chat owner
+2024-07-06 16:35:13,444 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-06 16:35:14,041 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
+2024-07-06 16:35:24,789 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-06 16:35:24,897 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
+2024-07-06 16:35:28,839 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308573 is handled. Duration 0 ms by bot id=6210998446
+2024-07-06 16:35:35,539 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308575 is handled. Duration 0 ms by bot id=6210998446
+2024-07-06 16:35:35,876 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308574 is handled. Duration 437 ms by bot id=6210998446
+2024-07-06 16:35:42,009 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308577 is handled. Duration 562 ms by bot id=6210998446
+2024-07-06 16:36:44,813 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-06 16:36:45,433 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308576 is not handled. Duration 64108 ms by bot id=6210998446
+2024-07-06 16:36:45,434 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
+2024-07-06 16:36:53,908 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-06 16:36:54,015 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
+2024-07-06 16:37:01,935 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308578 is handled. Duration 0 ms by bot id=6210998446
+2024-07-06 16:37:10,370 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308580 is handled. Duration 14 ms by bot id=6210998446
+2024-07-06 16:37:10,630 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308579 is handled. Duration 358 ms by bot id=6210998446
+2024-07-06 16:37:18,595 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308582 is handled. Duration 531 ms by bot id=6210998446
+2024-07-06 16:40:19,242 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308581 is not handled. Duration 181313 ms by bot id=6210998446
+2024-07-06 16:40:19,243 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=997308581 by bot id=6210998446
+TelegramBadRequest: Telegram server says - Bad Request: can't remove chat owner
+Traceback (most recent call last):
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\botlogic\handlers\capcha_fsm.py", line 66, in on_user_join_request
+    await bot.ban_chat_member(chat_id, user_id)
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\bot.py", line 778, in ban_chat_member
+    return await self(call, request_timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\bot.py", line 482, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 189, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: can't remove chat owner
+2024-07-06 16:40:25,835 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-06 16:40:26,221 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
+2024-07-06 16:40:31,483 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-06 16:40:31,594 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
+2024-07-06 16:40:33,981 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308584 is handled. Duration 0 ms by bot id=6210998446
+2024-07-06 16:40:34,225 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308583 is handled. Duration 358 ms by bot id=6210998446
+2024-07-06 16:40:38,911 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308586 is not handled. Duration 0 ms by bot id=6210998446
+2024-07-06 16:40:38,911 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=997308586 by bot id=6210998446
+KeyError: 'user_id'
+Traceback (most recent call last):
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\botlogic\handlers\capcha_fsm.py", line 19, in get_answer
+    elif message.from_user.id == data['user_id']:
+                                 ~~~~^^^^^^^^^^^
+KeyError: 'user_id'
+2024-07-06 16:40:43,572 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308587 is not handled. Duration 16 ms by bot id=6210998446
+2024-07-06 16:40:43,572 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=997308587 by bot id=6210998446
+KeyError: 'user_id'
+Traceback (most recent call last):
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\botlogic\handlers\capcha_fsm.py", line 19, in get_answer
+    elif message.from_user.id == data['user_id']:
+                                 ~~~~^^^^^^^^^^^
+KeyError: 'user_id'
+2024-07-06 16:41:39,925 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-06 16:41:40,925 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
+2024-07-06 16:41:40,927 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308585 is not handled. Duration 62155 ms by bot id=6210998446
+2024-07-06 16:41:46,243 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-06 16:41:46,350 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
+2024-07-06 16:41:58,532 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308588 is handled. Duration 0 ms by bot id=6210998446
+2024-07-06 16:42:03,306 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308590 is handled. Duration 16 ms by bot id=6210998446
+2024-07-06 16:42:03,565 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308589 is handled. Duration 358 ms by bot id=6210998446
+2024-07-06 16:42:10,152 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308592 is handled. Duration 452 ms by bot id=6210998446
+2024-07-06 16:42:31,007 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308593 is handled. Duration 468 ms by bot id=6210998446
+2024-07-06 16:42:39,641 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308594 is not handled. Duration 656 ms by bot id=6210998446
+2024-07-06 16:42:39,642 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=997308594 by bot id=6210998446
+TelegramBadRequest: Telegram server says - Bad Request: can't remove chat owner
+Traceback (most recent call last):
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\botlogic\handlers\capcha_fsm.py", line 35, in get_answer
+    await bot.ban_chat_member(chat_id, user_id)
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\bot.py", line 778, in ban_chat_member
+    return await self(call, request_timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\bot.py", line 482, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 189, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dev\napkin_contest\venv\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: can't remove chat owner
+2024-07-06 16:43:18,353 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-06 16:43:18,983 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @NowYeahbot id=6210998446 - 'NowYeahBot'
+2024-07-06 16:43:18,985 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=997308591 is not handled. Duration 69406 ms by bot id=6210998446
