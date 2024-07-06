@@ -32,13 +32,15 @@ async def start():
     dp.message.register(weather_fsm.get_by_city, GetWeatherSteps.BY_CITY)
 
     # капча!
-    dp.chat_member.register(capcha_fsm.on_user_join_request,
-                            ChatMemberUpdatedFilter(IS_NOT_MEMBER >> IS_MEMBER))
+    dp.chat_member.register(
+        capcha_fsm.on_user_join_request,
+        ChatMemberUpdatedFilter(IS_NOT_MEMBER >> IS_MEMBER),
+    )
     dp.message.register(capcha_fsm.get_answer, CapchaSteps.asking)
 
-    #dp.chat_member.register(
+    # dp.chat_member.register(
     #    on_user_join, ChatMemberUpdatedFilter(IS_NOT_MEMBER >> IS_MEMBER)
-    #)
+    # )
     dp.chat_member.register(
         on_user_left, ChatMemberUpdatedFilter(IS_MEMBER >> IS_NOT_MEMBER)
     )

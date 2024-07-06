@@ -2,7 +2,9 @@ import random
 from PIL import Image, ImageDraw, ImageFont
 
 
-def generate_example(width=200, height=50, font_path='arial.ttf', font_size=30, noise_level=0.1):
+def generate_example(
+    width=200, height=50, font_path="arial.ttf", font_size=30, noise_level=0.1
+):
     """
     Генерирует изображение с примером и правильный ответ
     """
@@ -10,13 +12,13 @@ def generate_example(width=200, height=50, font_path='arial.ttf', font_size=30, 
     num2 = random.randint(1, 50)
     example = f"{num1} + {num2}"
     answer = num1 + num2
-    background_color = (random.randint(160, 255),
-                        random.randint(160, 255),
-                        random.randint(160, 255))
-    font_color = (random.randint(0, 80),
-                  random.randint(0, 80),
-                  random.randint(0, 80))
-    image = Image.new('RGB', (width, height), background_color)
+    background_color = (
+        random.randint(160, 255),
+        random.randint(160, 255),
+        random.randint(160, 255),
+    )
+    font_color = (random.randint(0, 80), random.randint(0, 80), random.randint(0, 80))
+    image = Image.new("RGB", (width, height), background_color)
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype(font_path, font_size)
     text_width = draw.textlength(example, font=font)
@@ -29,10 +31,6 @@ def generate_example(width=200, height=50, font_path='arial.ttf', font_size=30, 
         y = random.randint(0, height - 1)
         image.putpixel(
             (x, y),
-            (
-                random.randint(0, 255),
-                random.randint(0, 255),
-                random.randint(0, 255)
-            )
+            (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)),
         )
-    return {'image': image, 'answer': answer}
+    return {"image": image, "answer": answer}
