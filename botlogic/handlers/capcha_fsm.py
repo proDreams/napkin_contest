@@ -6,16 +6,17 @@ from botlogic.settings import bot
 from botlogic.utils.statesform import CapchaSteps
 from botlogic.utils.capcha_gen import generate_example
 from aiogram.types import ChatMemberUpdated
+from asyncio import sleep
 
 
 async def get_answer(message: Message, state: FSMContext) -> None:
     data = await state.get_data()
     user = message.from_user.first_name
-    if int(message.text) == data["answer"]:
+    if message.text == str(data["answer"]):
         await message.answer(text="Верно!")
         await message.answer(text=views.join_message(user))
         await state.clear()
-    else:
+    elif message.from_user.id == data["new_user_id"]:
         await message.answer(text="Неверно")
         number = data["try_number"]
         data["messages_list"].append(message.message_id)
@@ -42,12 +43,25 @@ async def on_user_join_request(event: ChatMemberUpdated, state: FSMContext) -> N
     example = generate_example()
     example["image"].save(image_bytes, format="PNG")
     image_bytes.seek(0)
+    user_id = event.from_user.id
     await state.update_data(answer=example["answer"])
     await state.update_data(try_number=3)
-    await state.set_state(state=CapchaSteps.asking)
+    await state.update_data(new_user_id=user_id)
     await state.update_data(messages_list=[])
     await event.answer_photo(
         BufferedInputFile(image_bytes.read(), filename="img.png"),
         caption=f"{user}, для вступления в группу необходимо"
-        " вычислить результат математического выражения:",
+        " вычислить результат математического выражения. На решение вам дается 3 минуты.",
     )
+    await state.set_state(state=CapchaSteps.asking)
+    # Ограничение по времени
+    await sleep(180)
+    if (await state.get_state()) == CapchaSteps.asking:
+        await event.answer("Время вышло. К сожалению вам не разрешено присоединиться.")
+        chat_id = event.chat.id
+        await bot.send_message(chat_id=chat_id, text=f"Ахтунг! Бот {user} детектед!")
+        await bot.delete_messages(
+            chat_id, message_ids=(await state.get_data())["messages_list"]
+        )
+        await bot.ban_chat_member(chat_id, user_id)
+        await state.clear()
