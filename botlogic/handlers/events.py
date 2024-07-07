@@ -1,3 +1,4 @@
+import asyncio
 from aiogram.types import ChatMemberUpdated
 
 from botlogic.settings import bot, secrets
@@ -16,4 +17,8 @@ async def stop_bot() -> None:
 
 
 async def on_user_left(event: ChatMemberUpdated) -> None:
-    await event.answer(text=views.left_message(first_name=event.from_user.first_name))
+    if event.chat.id == secrets.group_id:
+        await asyncio.sleep(5)
+        await event.answer(
+            text=views.left_message(first_name=event.old_chat_member.user.first_name)   
+        )
