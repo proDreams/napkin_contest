@@ -7,3 +7,7 @@ class SendFileSteps(StatesGroup):
 
 class GetWeatherSteps(StatesGroup):
     BY_CITY = State()
+
+
+class CaptchaState(StatesGroup):
+    waiting_for_captcha = State()
