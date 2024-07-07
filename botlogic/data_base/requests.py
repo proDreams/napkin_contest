@@ -13,7 +13,9 @@ class Requests:
     def __init__(self, session) -> None:
         self.session = session
 
-    async def add_new_user(self, user_id: int, check_captcha: str, time: str, result: int) -> None:
+    async def add_new_user(
+        self, user_id: int, check_captcha: str, time: str, result: int
+    ) -> None:
         async with self.session:
             new_user = NewUser(
                 user_id=user_id,

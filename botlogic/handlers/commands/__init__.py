@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-__all__ = 'main_commands_router'
+__all__ = "main_commands_router"
 
 
 from aiogram import Router

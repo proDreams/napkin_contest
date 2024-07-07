@@ -16,14 +16,14 @@ class Config:
     """
 
     def __init__(
-            self,
-            token: str,
-            group_id: int,
-            audio_secret_key: str,
-            audio_key_id: int,
-            weather_key: str,
-            admin_id: int,
-            data_base_url: str
+        self,
+        token: str,
+        group_id: int,
+        audio_secret_key: str,
+        audio_key_id: int,
+        weather_key: str,
+        admin_id: int,
+        data_base_url: str,
     ) -> None:
         self.__token = token
         self.__group_id = group_id
@@ -46,13 +46,13 @@ class Config:
 load_dotenv()
 # Инициализация объекта класса Config.
 MyConfig = Config(
-    token=os.getenv('TOKEN'),
-    group_id=int(os.getenv('GROUP_ID')),
-    audio_secret_key=os.getenv('AUDIO_SECRET_KEY'),
-    audio_key_id=int(os.getenv('AUDIO_KEY_ID')),
-    weather_key=os.getenv('WEATHER_KEY'),
-    admin_id=int(os.getenv('ADMIN_ID')),
-    data_base_url=os.getenv('DATA_BASE_URL')
+    token=os.getenv("TOKEN"),
+    group_id=int(os.getenv("GROUP_ID")),
+    audio_secret_key=os.getenv("AUDIO_SECRET_KEY"),
+    audio_key_id=int(os.getenv("AUDIO_KEY_ID")),
+    weather_key=os.getenv("WEATHER_KEY"),
+    admin_id=int(os.getenv("ADMIN_ID")),
+    data_base_url=os.getenv("DATA_BASE_URL"),
 )
 
 

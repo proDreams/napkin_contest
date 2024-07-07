@@ -18,6 +18,6 @@ async def on_user_left(event: ChatMemberUpdated) -> None:
     """Прощальное сообщение предателю!!"""
 
     await event.answer(
-        text=f'С прискорбием сообщаю, что {event.old_chat_member.user.full_name} покинул(а) наш чатик.\n\n'
-             f'(предатель(ница))',
+        text=f"С прискорбием сообщаю, что {event.old_chat_member.user.full_name} покинул(а) наш чатик.\n\n"
+        f"(предатель(ница))",
     )

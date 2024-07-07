@@ -19,6 +19,7 @@ dp.include_router(
     main_handlers_router,
 )
 
+
 async def start():
 
     dp.startup.register(start_bot)
