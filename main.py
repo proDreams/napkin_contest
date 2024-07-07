@@ -8,10 +8,18 @@ from botlogic.handlers.events import start_bot, stop_bot, on_user_join, on_user_
 from botlogic.handlers.filter_words import check_message
 from botlogic.settings import bot
 from botlogic.utils.statesform import SendFileSteps, GetWeatherSteps
+from botlogic.handlers import router as main_handlers_router
+from botlogic.data_base.Engine import async_main
 
+
+dp = Dispatcher()
+
+# Подключение главного роутера к диспетчеру.
+dp.include_router(
+    main_handlers_router,
+)
 
 async def start():
-    dp = Dispatcher()
 
     dp.startup.register(start_bot)
     dp.shutdown.register(stop_bot)
@@ -31,17 +39,11 @@ async def start():
     dp.message.register(weather_fsm.get_weather_command, Command(commands="weather"))
     dp.message.register(weather_fsm.get_by_city, GetWeatherSteps.BY_CITY)
 
-    dp.chat_member.register(
-        on_user_join, ChatMemberUpdatedFilter(IS_NOT_MEMBER >> IS_MEMBER)
-    )
-    dp.chat_member.register(
-        on_user_left, ChatMemberUpdatedFilter(IS_MEMBER >> IS_NOT_MEMBER)
-    )
-
     dp.message.register(check_message)
 
     try:
         await dp.start_polling(bot)
+        await async_main()
     finally:
         await bot.session.close()
 
