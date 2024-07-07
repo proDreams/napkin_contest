@@ -21,4 +21,4 @@ async def on_user_left(event: ChatMemberUpdated) -> None:
         await asyncio.sleep(5)
         await event.answer(
             text=views.left_message(first_name=event.old_chat_member.user.first_name)   
-        )
+    )
