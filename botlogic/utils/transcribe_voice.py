@@ -24,6 +24,6 @@ async def get_query_url_response(response: Response) -> Response:
     headers = {"keyId": secrets.audio_key_id, "keySecret": secrets.audio_key_secret}
     create_result = response.json()
     query_url = "https://api.speechflow.io/asr/file/v1/query?taskId="
-    query_url += f"{create_result.get("taskId")}&resultType=4"
+    query_url += f"{create_result.get('taskId')}&resultType=4"
 
     return requests.get(url=query_url, headers=headers)

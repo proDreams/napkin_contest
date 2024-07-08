@@ -7,3 +7,7 @@ class SendFileSteps(StatesGroup):
 
 class GetWeatherSteps(StatesGroup):
     BY_CITY = State()
+
+
+class Captcha(StatesGroup):
+    captcha = State()
