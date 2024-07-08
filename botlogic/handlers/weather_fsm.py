@@ -4,7 +4,7 @@ from aiogram.types import Message
 from botlogic import views
 from botlogic.settings import bot
 from botlogic.utils.get_weather import request_weather
-from botlogic.utils.statesform import GetWeatherSteps
+from botlogic.utils.statesform import GetWeatherSteps, Captcha
 
 
 async def get_weather_command(message: Message, state: FSMContext) -> None:
@@ -27,3 +27,8 @@ async def get_by_city(message: Message, state: FSMContext) -> None:
                 chat_id=message.chat.id, text=views.weather_wrong_city()
             )
             await state.set_state(state=GetWeatherSteps.BY_CITY)
+
+
+async def get_captcha_answer(message: Message, state: FSMContext) -> None:
+    await message.answer("!")
+    await state.set_state(state=Captcha)

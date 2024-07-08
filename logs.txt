@@ -1,0 +1,1036 @@
+2024-07-02 15:36:23,321 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-02 15:36:23,476 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-02 15:36:23,653 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400263 is not handled. Duration 14 ms by bot id=7047909287
+2024-07-02 15:36:23,653 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400265 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-02 15:36:23,653 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400266 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-02 15:36:23,653 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400264 is handled. Duration 0 ms by bot id=7047909287
+2024-07-02 15:36:47,869 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400267 is handled. Duration 0 ms by bot id=7047909287
+2024-07-02 15:38:43,766 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400268 is handled. Duration 0 ms by bot id=7047909287
+2024-07-02 15:39:37,484 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-02 15:39:37,484 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-02 15:39:43,506 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-02 15:39:43,667 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-02 15:39:59,522 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400269 is handled. Duration 514 ms by bot id=7047909287
+2024-07-02 15:40:04,693 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400270 is not handled. Duration 547 ms by bot id=7047909287
+2024-07-02 15:40:04,694 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400270 by bot id=7047909287
+KeyError: 'list'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\handlers\weather_fsm.py", line 20, in get_by_city
+    result = request_weather(city=message.text)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\utils\get_weather.py", line 20, in request_weather
+    return generate_result(data=result, city=city)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\utils\get_weather.py", line 24, in generate_result
+    temp = int(data["list"][0]["main"]["temp"])
+KeyError: 'list'
+2024-07-02 15:40:09,034 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400271 is handled. Duration 344 ms by bot id=7047909287
+2024-07-02 15:40:13,167 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400272 is handled. Duration 280 ms by bot id=7047909287
+2024-07-02 15:40:20,613 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400273 is handled. Duration 219 ms by bot id=7047909287
+2024-07-04 11:20:01,582 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-04 11:20:02,568 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-04 11:20:38,768 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400361 is handled. Duration 0 ms by bot id=7047909287
+2024-07-04 11:20:48,202 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400362 is handled. Duration 0 ms by bot id=7047909287
+2024-07-04 11:22:07,538 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400363 is handled. Duration 0 ms by bot id=7047909287
+2024-07-04 11:22:08,970 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-04 11:22:08,970 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-04 11:22:40,143 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-04 11:22:40,305 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-04 11:22:45,779 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400364 is handled. Duration 0 ms by bot id=7047909287
+2024-07-04 11:22:48,277 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400365 is handled. Duration 0 ms by bot id=7047909287
+2024-07-04 11:22:55,860 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400366 is handled. Duration 0 ms by bot id=7047909287
+2024-07-04 11:25:48,962 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400367 is handled. Duration 0 ms by bot id=7047909287
+2024-07-04 11:27:02,949 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400368 is handled. Duration 781 ms by bot id=7047909287
+2024-07-04 11:27:14,949 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400369 is handled. Duration 0 ms by bot id=7047909287
+2024-07-04 11:27:20,744 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400370 is handled. Duration 2358 ms by bot id=7047909287
+2024-07-04 11:27:22,425 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400371 is handled. Duration 2203 ms by bot id=7047909287
+2024-07-04 11:27:28,320 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400372 is handled. Duration 250 ms by bot id=7047909287
+2024-07-04 12:31:44,147 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-04 12:31:44,147 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-04 21:45:07,623 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-04 21:45:07,796 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-04 21:47:10,065 - [ERROR] -  aiogram.dispatcher - (dispatcher.py)._listen_updates(219) - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2024-07-04 21:47:10,065 - [WARNING] -  aiogram.dispatcher - (dispatcher.py)._listen_updates(221) - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7047909287)
+2024-07-04 21:47:11,794 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._listen_updates(233) - Connection established (tryings = 1, bot id = 7047909287)
+2024-07-04 21:47:12,451 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400373 is handled. Duration 656 ms by bot id=7047909287
+2024-07-04 21:47:25,860 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400374 is handled. Duration 328 ms by bot id=7047909287
+2024-07-04 21:48:30,415 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-04 21:48:30,415 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-05 22:57:28,884 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-05 22:57:29,117 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-05 22:58:22,464 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-05 22:58:22,464 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-05 22:58:54,616 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-05 22:58:54,760 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-05 22:58:55,912 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-05 22:58:55,914 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-05 22:59:08,004 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-05 22:59:08,274 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-05 22:59:34,506 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400378 is handled. Duration 2344 ms by bot id=7047909287
+2024-07-05 23:00:11,314 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400380 is handled. Duration 14 ms by bot id=7047909287
+2024-07-05 23:00:12,218 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400379 is handled. Duration 1125 ms by bot id=7047909287
+2024-07-05 23:25:22,330 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400381 is handled. Duration 906 ms by bot id=7047909287
+2024-07-05 23:25:25,039 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400382 is handled. Duration 233 ms by bot id=7047909287
+2024-07-05 23:25:26,936 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400383 is handled. Duration 360 ms by bot id=7047909287
+2024-07-05 23:25:30,326 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400384 is not handled. Duration 2046 ms by bot id=7047909287
+2024-07-05 23:25:30,328 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400384 by bot id=7047909287
+ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /bot/create-user/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019ECB4F3BE0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\urllib3\connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\urllib3\connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\urllib3\connection.py", line 398, in request
+    self.endheaders()
+  File "C:\Users\Xudaybergen\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Xudaybergen\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "C:\Users\Xudaybergen\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\urllib3\connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000019ECB4F3BE0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\urllib3\connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /bot/create-user/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019ECB4F3BE0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\handlers\simple.py", line 10, in start_command
+    register_user(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\utils\api_actions.py", line 16, in register_user
+    requests.post(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /bot/create-user/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019ECB4F3BE0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2024-07-05 23:25:30,883 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400385 is handled. Duration 250 ms by bot id=7047909287
+2024-07-05 23:25:37,150 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400386 is handled. Duration 1500 ms by bot id=7047909287
+2024-07-05 23:28:18,341 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-05 23:28:18,344 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-05 23:32:02,898 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-05 23:32:03,052 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-05 23:32:23,459 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400388 is handled. Duration 0 ms by bot id=7047909287
+2024-07-05 23:32:23,862 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400387 is handled. Duration 561 ms by bot id=7047909287
+2024-07-05 23:32:26,513 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400389 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-05 23:32:26,525 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400389 by bot id=7047909287
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\handlers\events.py", line 19, in on_user_join
+    await send_welcome()
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+2024-07-05 23:32:26,915 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400390 is handled. Duration 0 ms by bot id=7047909287
+2024-07-05 23:51:15,077 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400392 is handled. Duration 0 ms by bot id=7047909287
+2024-07-05 23:51:15,546 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400391 is handled. Duration 733 ms by bot id=7047909287
+2024-07-05 23:51:18,853 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400393 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-05 23:51:18,860 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400393 by bot id=7047909287
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\handlers\events.py", line 19, in on_user_join
+    await send_welcome()
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+2024-07-05 23:51:19,026 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400394 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:10:58,783 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400395 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:11:34,978 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400396 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:11:53,081 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400397 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:12:02,016 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400398 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:26:48,901 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400399 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:27:05,281 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400401 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:27:07,832 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400402 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:27:07,835 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400402 by bot id=7047909287
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\handlers\events.py", line 19, in on_user_join
+    await send_welcome()
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+2024-07-06 00:27:08,000 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400403 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:27:20,747 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400400 is handled. Duration 15718 ms by bot id=7047909287
+2024-07-06 00:29:14,104 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400404 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:29:17,634 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400406 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:29:18,211 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400405 is handled. Duration 735 ms by bot id=7047909287
+2024-07-06 00:29:23,735 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400407 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:29:23,749 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400407 by bot id=7047909287
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\handlers\events.py", line 19, in on_user_join
+    await send_welcome()
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+2024-07-06 00:29:23,913 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400408 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:32:38,620 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400409 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:33:54,793 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400411 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:33:55,281 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400410 is handled. Duration 639 ms by bot id=7047909287
+2024-07-06 00:34:21,600 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400412 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:34:21,610 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400412 by bot id=7047909287
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\handlers\events.py", line 19, in on_user_join
+    await send_welcome()
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+2024-07-06 00:34:21,750 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400413 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:40:56,235 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400414 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:40:59,940 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400416 is handled. Duration 14 ms by bot id=7047909287
+2024-07-06 00:41:00,363 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400415 is handled. Duration 671 ms by bot id=7047909287
+2024-07-06 00:41:03,486 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400417 is not handled. Duration 15 ms by bot id=7047909287
+2024-07-06 00:41:03,486 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400417 by bot id=7047909287
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\handlers\events.py", line 19, in on_user_join
+    await send_welcome()
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+2024-07-06 00:41:03,677 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400418 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:43:25,340 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400420 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:43:36,990 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400421 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:43:36,994 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400421 by bot id=7047909287
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\handlers\events.py", line 19, in on_user_join
+    await send_welcome()
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+2024-07-06 00:43:37,290 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400422 is handled. Duration 0 ms by bot id=7047909287
+2024-07-06 00:43:40,789 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400419 is handled. Duration 15655 ms by bot id=7047909287
+2024-07-07 10:04:37,315 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 10:04:37,555 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:05:11,781 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400427 is handled. Duration 625 ms by bot id=7047909287
+2024-07-07 10:05:28,410 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400428 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:05:28,410 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400428 by bot id=7047909287
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\handlers\events.py", line 19, in on_user_join
+    await send_welcome()
+TypeError: send_welcome() missing 2 required positional arguments: 'event' and 'message'
+2024-07-07 10:05:28,813 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400429 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:05:29,931 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400426 is handled. Duration 26875 ms by bot id=7047909287
+2024-07-07 10:05:46,684 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 10:05:46,684 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:06:09,640 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 10:06:09,782 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:22:31,335 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 10:22:31,340 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:22:53,634 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 10:22:53,784 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:23:07,968 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400430 is handled. Duration 1063 ms by bot id=7047909287
+2024-07-07 10:23:12,675 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400432 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:23:12,841 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400431 is handled. Duration 328 ms by bot id=7047909287
+2024-07-07 10:23:20,562 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400433 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:23:20,562 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400433 by bot id=7047909287
+TypeError: on_user_join() missing 1 required positional argument: 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+TypeError: on_user_join() missing 1 required positional argument: 'message'
+2024-07-07 10:23:20,728 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400434 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:24:59,483 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 10:24:59,486 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:25:12,287 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 10:25:12,582 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:25:36,695 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400436 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:25:37,198 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400435 is handled. Duration 703 ms by bot id=7047909287
+2024-07-07 10:25:39,648 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400437 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:25:39,649 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400437 by bot id=7047909287
+TypeError: on_user_join() missing 1 required positional argument: 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+TypeError: on_user_join() missing 1 required positional argument: 'message'
+2024-07-07 10:25:40,351 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400438 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:28:56,156 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 10:28:56,159 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:31:12,118 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 10:31:12,325 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:31:18,158 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400440 is handled. Duration 15 ms by bot id=7047909287
+2024-07-07 10:31:18,543 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400439 is handled. Duration 593 ms by bot id=7047909287
+2024-07-07 10:31:21,519 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400441 is not handled. Duration 14 ms by bot id=7047909287
+2024-07-07 10:31:21,522 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400441 by bot id=7047909287
+TypeError: on_user_join() missing 1 required positional argument: 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+TypeError: on_user_join() missing 1 required positional argument: 'message'
+2024-07-07 10:31:21,936 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400442 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:44:36,040 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:44:36,040 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 10:44:42,968 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 10:44:43,115 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:45:22,516 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400444 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:45:24,145 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400443 is handled. Duration 1889 ms by bot id=7047909287
+2024-07-07 10:45:25,764 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400445 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:45:25,765 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400445 by bot id=7047909287
+TypeError: on_user_join() missing 1 required positional argument: 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+TypeError: on_user_join() missing 1 required positional argument: 'message'
+2024-07-07 10:45:25,970 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400446 is handled. Duration 14 ms by bot id=7047909287
+2024-07-07 10:47:29,905 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:47:29,905 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 10:47:36,338 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 10:47:36,485 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:47:47,340 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400448 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:47:47,677 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400447 is handled. Duration 546 ms by bot id=7047909287
+2024-07-07 10:47:52,280 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400450 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:47:52,939 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400449 is handled. Duration 828 ms by bot id=7047909287
+2024-07-07 10:48:19,551 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:48:19,551 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 10:49:20,370 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 10:49:20,635 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:49:29,896 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400452 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:49:30,463 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400451 is handled. Duration 875 ms by bot id=7047909287
+2024-07-07 10:49:33,810 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400454 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:49:34,415 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400453 is handled. Duration 905 ms by bot id=7047909287
+2024-07-07 10:49:44,703 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400455 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 10:53:48,783 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:53:48,785 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 10:53:55,430 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 10:53:55,575 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:54:25,055 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400456 is handled. Duration 718 ms by bot id=7047909287
+2024-07-07 10:54:28,300 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400458 is handled. Duration 16 ms by bot id=7047909287
+2024-07-07 10:54:28,681 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400457 is handled. Duration 546 ms by bot id=7047909287
+2024-07-07 10:54:37,771 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400459 is handled. Duration 14 ms by bot id=7047909287
+2024-07-07 10:56:43,275 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 10:56:43,275 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 11:00:37,353 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 11:00:37,515 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:00:48,938 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400460 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:00:48,939 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400460 by bot id=7047909287
+TypeError: check_captcha() missing 1 required positional argument: 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+TypeError: check_captcha() missing 1 required positional argument: 'message'
+2024-07-07 11:00:59,140 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400461 is handled. Duration 641 ms by bot id=7047909287
+2024-07-07 11:01:04,735 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400462 is handled. Duration 250 ms by bot id=7047909287
+2024-07-07 11:01:04,743 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400463 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:01:04,744 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400463 by bot id=7047909287
+TypeError: check_captcha() missing 1 required positional argument: 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+TypeError: check_captcha() missing 1 required positional argument: 'message'
+2024-07-07 11:01:08,524 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400465 is not handled. Duration 46 ms by bot id=7047909287
+2024-07-07 11:01:08,524 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400465 by bot id=7047909287
+TypeError: check_captcha() missing 1 required positional argument: 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+TypeError: check_captcha() missing 1 required positional argument: 'message'
+2024-07-07 11:01:08,937 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400464 is handled. Duration 735 ms by bot id=7047909287
+2024-07-07 11:01:14,201 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400466 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:01:14,202 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400466 by bot id=7047909287
+TypeError: check_captcha() missing 1 required positional argument: 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+TypeError: check_captcha() missing 1 required positional argument: 'message'
+2024-07-07 11:02:03,102 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:02:03,102 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 11:02:27,862 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 11:02:28,077 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:02:52,236 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:02:52,236 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 11:04:54,505 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 11:04:54,676 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:05:00,305 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400467 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:05:04,135 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400468 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:05:07,341 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400470 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:05:07,935 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400469 is handled. Duration 781 ms by bot id=7047909287
+2024-07-07 11:05:11,653 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400472 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:05:12,039 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400471 is handled. Duration 562 ms by bot id=7047909287
+2024-07-07 11:05:14,844 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400473 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:11:54,635 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:11:54,635 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 11:12:02,921 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 11:12:03,330 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:12:12,066 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400475 is handled. Duration 14 ms by bot id=7047909287
+2024-07-07 11:12:15,465 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400477 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:12:28,664 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400474 is handled. Duration 16750 ms by bot id=7047909287
+2024-07-07 11:12:30,589 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400476 is handled. Duration 15813 ms by bot id=7047909287
+2024-07-07 11:12:33,957 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400478 is handled. Duration 16 ms by bot id=7047909287
+2024-07-07 11:20:32,598 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:20:32,598 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 11:20:39,625 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 11:20:39,819 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:20:50,149 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400479 is handled. Duration 921 ms by bot id=7047909287
+2024-07-07 11:20:55,806 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400480 is not handled. Duration 641 ms by bot id=7047909287
+2024-07-07 11:20:55,806 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400480 by bot id=7047909287
+KeyError: 'list'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\handlers\weather_fsm.py", line 20, in get_by_city
+    result = request_weather(city=message.text)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\utils\get_weather.py", line 20, in request_weather
+    return generate_result(data=result, city=city)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\utils\get_weather.py", line 24, in generate_result
+    temp = int(data["list"][0]["main"]["temp"])
+KeyError: 'list'
+2024-07-07 11:21:09,935 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400481 is not handled. Duration 4593 ms by bot id=7047909287
+2024-07-07 11:21:09,935 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400481 by bot id=7047909287
+KeyError: 'list'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\handlers\weather_fsm.py", line 20, in get_by_city
+    result = request_weather(city=message.text)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\utils\get_weather.py", line 20, in request_weather
+    return generate_result(data=result, city=city)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\botlogic\utils\get_weather.py", line 24, in generate_result
+    temp = int(data["list"][0]["main"]["temp"])
+KeyError: 'list'
+2024-07-07 11:21:36,008 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400482 is handled. Duration 656 ms by bot id=7047909287
+2024-07-07 11:21:44,480 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400483 is handled. Duration 218 ms by bot id=7047909287
+2024-07-07 11:21:44,485 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400484 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:21:47,942 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400486 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:21:48,407 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400485 is handled. Duration 625 ms by bot id=7047909287
+2024-07-07 11:21:59,558 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400487 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:25:04,355 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:25:04,360 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 11:30:58,300 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 11:30:58,533 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:31:08,906 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400488 is handled. Duration 546 ms by bot id=7047909287
+2024-07-07 11:31:15,644 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400489 is handled. Duration 250 ms by bot id=7047909287
+2024-07-07 11:31:15,647 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400490 is handled. Duration 14 ms by bot id=7047909287
+2024-07-07 11:31:24,789 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400492 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:31:25,375 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400491 is handled. Duration 875 ms by bot id=7047909287
+2024-07-07 11:31:39,578 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400493 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:42:31,856 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:42:31,856 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 11:42:57,323 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 11:42:57,540 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:43:29,355 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400495 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:43:29,865 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400494 is handled. Duration 655 ms by bot id=7047909287
+2024-07-07 11:43:42,291 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400497 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:43:42,606 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400496 is handled. Duration 514 ms by bot id=7047909287
+2024-07-07 11:43:48,955 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400498 is handled. Duration 16 ms by bot id=7047909287
+2024-07-07 11:44:03,922 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400499 is handled. Duration 593 ms by bot id=7047909287
+2024-07-07 11:44:45,884 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400501 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:44:47,469 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400500 is handled. Duration 1828 ms by bot id=7047909287
+2024-07-07 11:44:50,245 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400503 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:44:50,569 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400502 is handled. Duration 561 ms by bot id=7047909287
+2024-07-07 11:44:54,025 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400504 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:50:46,215 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:50:46,218 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 11:50:53,330 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 11:50:53,606 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:51:14,200 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400506 is handled. Duration 14 ms by bot id=7047909287
+2024-07-07 11:51:15,579 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400505 is handled. Duration 1703 ms by bot id=7047909287
+2024-07-07 11:51:17,643 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400507 is not handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:51:17,645 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=520400507 by bot id=7047909287
+TypeError: on_user_join() missing 1 required positional argument: 'message'
+Traceback (most recent call last):
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\Xudaybergen\Desktop\Xudaybergen\.venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+TypeError: on_user_join() missing 1 required positional argument: 'message'
+2024-07-07 11:51:17,998 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400508 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:57:57,263 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:57:57,266 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 11:58:06,376 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 11:58:06,536 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:58:15,876 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400510 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:58:20,745 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400512 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:58:21,627 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400511 is handled. Duration 1156 ms by bot id=7047909287
+2024-07-07 11:58:25,360 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400513 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:58:32,484 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400509 is handled. Duration 16734 ms by bot id=7047909287
+2024-07-07 11:58:42,124 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400514 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:59:35,706 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:59:35,706 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 11:59:44,246 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 11:59:44,480 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 11:59:47,435 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400516 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 11:59:48,096 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400515 is handled. Duration 889 ms by bot id=7047909287
+2024-07-07 12:00:07,763 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400518 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 12:00:23,805 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400517 is handled. Duration 16296 ms by bot id=7047909287
+2024-07-07 12:00:30,565 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400519 is handled. Duration 14 ms by bot id=7047909287
+2024-07-07 12:23:06,823 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 12:23:06,823 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-07 12:23:15,477 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-07 12:23:15,701 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-07 12:23:27,658 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400521 is handled. Duration 15 ms by bot id=7047909287
+2024-07-07 12:23:28,046 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400520 is handled. Duration 655 ms by bot id=7047909287
+2024-07-07 12:23:30,774 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400523 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 12:23:31,330 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400522 is handled. Duration 719 ms by bot id=7047909287
+2024-07-07 12:23:39,476 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400524 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 12:24:55,745 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400525 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 12:24:57,662 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400526 is handled. Duration 0 ms by bot id=7047909287
+2024-07-07 12:24:58,858 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400527 is handled. Duration 0 ms by bot id=7047909287
+2024-07-08 14:23:52,242 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-08 14:23:52,504 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-08 14:24:11,245 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400528 is handled. Duration 2844 ms by bot id=7047909287
+2024-07-08 14:24:13,654 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400530 is handled. Duration 0 ms by bot id=7047909287
+2024-07-08 14:24:14,160 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400529 is handled. Duration 671 ms by bot id=7047909287
+2024-07-08 14:24:21,335 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400531 is handled. Duration 0 ms by bot id=7047909287
+2024-07-08 14:24:27,819 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-08 14:24:27,820 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-08 14:32:41,963 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-08 14:32:42,406 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-08 14:32:58,831 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400533 is handled. Duration 15 ms by bot id=7047909287
+2024-07-08 14:33:00,803 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400532 is handled. Duration 2187 ms by bot id=7047909287
+2024-07-08 14:33:01,057 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400535 is handled. Duration 0 ms by bot id=7047909287
+2024-07-08 14:33:02,369 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400534 is handled. Duration 1562 ms by bot id=7047909287
+2024-07-08 14:33:06,827 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400536 is handled. Duration 0 ms by bot id=7047909287
+2024-07-08 14:39:48,563 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-08 14:39:48,563 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-08 14:41:44,643 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-08 14:41:44,903 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-08 14:42:01,263 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-08 14:42:01,265 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-08 14:42:22,655 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-08 14:42:22,882 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-08 14:42:29,389 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400538 is handled. Duration 0 ms by bot id=7047909287
+2024-07-08 14:42:32,675 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400540 is handled. Duration 16 ms by bot id=7047909287
+2024-07-08 14:42:33,662 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400539 is handled. Duration 1328 ms by bot id=7047909287
+2024-07-08 14:42:37,536 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400541 is handled. Duration 0 ms by bot id=7047909287
+2024-07-08 14:42:45,091 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=520400537 is handled. Duration 15905 ms by bot id=7047909287
+2024-07-08 14:47:43,927 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @bot_on_napkin_bot id=7047909287 - 'BotOnNapkin'
+2024-07-08 14:47:43,928 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped

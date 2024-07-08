@@ -4,14 +4,24 @@ from aiogram import Dispatcher, F
 from aiogram.filters import Command, ChatMemberUpdatedFilter, IS_NOT_MEMBER, IS_MEMBER
 
 from botlogic.handlers import send_file, simple, weather_fsm, payment
-from botlogic.handlers.events import start_bot, stop_bot, on_user_join, on_user_left
+from botlogic.handlers.events import (
+    start_bot,
+    stop_bot,
+    on_user_join,
+    on_user_left,
+    check_captcha,
+)
 from botlogic.handlers.filter_words import check_message
 from botlogic.settings import bot
-from botlogic.utils.statesform import SendFileSteps, GetWeatherSteps
+from botlogic.utils.statesform import SendFileSteps, GetWeatherSteps, Captcha
+
+from botlogic.handlers import events as MyROUTE
 
 
 async def start():
     dp = Dispatcher()
+
+    dp.include_router(router=MyROUTE.router)
 
     dp.startup.register(start_bot)
     dp.shutdown.register(stop_bot)
@@ -47,4 +57,8 @@ async def start():
 
 
 if __name__ == "__main__":
-    asyncio.run(start())
+    try:
+        asyncio.run(start())
+
+    except KeyboardInterrupt:
+        print("Бот остановлен!")
