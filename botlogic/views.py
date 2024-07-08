@@ -91,12 +91,24 @@ def filtered_message(username: str, message: str) -> str:
 <code>{message}</code>"""
 
 
+def pre_join_message(first_name: str) -> str:
+    return f"""Добро пожаловать в нашу группу, {first_name}!
+
+Для подтверждения, что ты не спамер, отправь сообщение с ответом на задачу:
+Какой результат выражения на изображении?
+"""
+
+
 def join_message(first_name: str) -> str:
     return f"""Добро пожаловать в нашу группу, {first_name}!
 
 Давай знакомиться. 
 
 Расскажи немного о себе, своих увлечениях и о своём пути в программировании."""
+
+
+def wrong_answer_join_message(tries: int) -> str:
+    return f"Неверный ответ! Осталось попыток {3 - tries}"
 
 
 def left_message(first_name: str) -> str:

@@ -2,6 +2,7 @@ import logging
 
 from aiogram.client.default import DefaultBotProperties
 from aiogram import Bot
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from pydantic import SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -40,6 +41,8 @@ class Secrets(BaseSettings):
 
 
 secrets = Secrets()
+
+scheduler = AsyncIOScheduler(timezone="Europe/Moscow")
 
 bot = Bot(
     token=secrets.token.get_secret_value(),

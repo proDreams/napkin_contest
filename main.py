@@ -4,14 +4,22 @@ from aiogram import Dispatcher, F
 from aiogram.filters import Command, ChatMemberUpdatedFilter, IS_NOT_MEMBER, IS_MEMBER
 
 from botlogic.handlers import send_file, simple, weather_fsm, payment
-from botlogic.handlers.events import start_bot, stop_bot, on_user_join, on_user_left
+from botlogic.handlers.events import (
+    start_bot,
+    stop_bot,
+    on_user_join,
+    on_user_left,
+    wait_join_answer,
+)
 from botlogic.handlers.filter_words import check_message
-from botlogic.settings import bot
-from botlogic.utils.statesform import SendFileSteps, GetWeatherSteps
+from botlogic.settings import bot, scheduler
+from botlogic.utils.statesform import SendFileSteps, GetWeatherSteps, CheckJoin
 
 
 async def start():
     dp = Dispatcher()
+
+    scheduler.start()
 
     dp.startup.register(start_bot)
     dp.shutdown.register(stop_bot)
@@ -34,6 +42,8 @@ async def start():
     dp.chat_member.register(
         on_user_join, ChatMemberUpdatedFilter(IS_NOT_MEMBER >> IS_MEMBER)
     )
+    dp.message.register(wait_join_answer, CheckJoin.WAIT_ANSWER)
+
     dp.chat_member.register(
         on_user_left, ChatMemberUpdatedFilter(IS_MEMBER >> IS_NOT_MEMBER)
     )
