@@ -103,12 +103,3 @@ def left_message(first_name: str) -> str:
     return f"""С прискорбием сообщаю, что {first_name} решил(а) покинуть наш уютный чатик.
     
 (предатель(ница))"""
-
-def captcha_message(firs_name: str) -> str:
-    return f"Сначла проверим тебя на человечность {firs_name} - у тебя 3 попытки ответить))"
-
-def captcha_message_succsess(first_name: str) -> str:
-    return f"Поздравляю {first_name}, ты ответил верно можешь остаться в нашемм уютном чатике!"
-
-def capcha_message_failure(first_name: str) -> str:
-    return f"Не получилось,{first_name},  попробуй еще раз"

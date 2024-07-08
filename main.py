@@ -39,7 +39,8 @@ async def start():
     dp.message_reaction.register(check_message)
 
     dp.chat_member.register(
-        captcha_handler.on_user_joined,ChatMemberUpdatedFilter(IS_NOT_MEMBER >> IS_MEMBER)
+        captcha_handler.on_user_joined,
+        ChatMemberUpdatedFilter(IS_NOT_MEMBER >> IS_MEMBER),
     )
     dp.message.register(captcha_handler.on_captcha_response)
     try:
