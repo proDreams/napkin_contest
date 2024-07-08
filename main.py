@@ -8,6 +8,13 @@ from botlogic.handlers.events import start_bot, stop_bot, on_user_join, on_user_
 from botlogic.handlers.filter_words import check_message
 from botlogic.settings import bot
 from botlogic.utils.statesform import SendFileSteps, GetWeatherSteps
+from botlogic.utils.check_captcha import (
+    check_user_captcha,
+    delete_admin_warning_callback,
+    check_captcha_timeouts,
+    handle_message,
+    test_captcha,
+)
 
 
 async def start():
@@ -30,15 +37,18 @@ async def start():
 
     dp.message.register(weather_fsm.get_weather_command, Command(commands="weather"))
     dp.message.register(weather_fsm.get_by_city, GetWeatherSteps.BY_CITY)
-
+    dp.message.register(test_captcha, Command(commands=["test_captcha"]))
+    dp.message.register(handle_message)
+    dp.message.register(check_user_captcha)
+    dp.message.register(check_captcha_timeouts)
     dp.chat_member.register(
         on_user_join, ChatMemberUpdatedFilter(IS_NOT_MEMBER >> IS_MEMBER)
     )
+    dp.callback_query.register(delete_admin_warning_callback, F.data == "admin_warning")
+    dp.message.register(check_message)
     dp.chat_member.register(
         on_user_left, ChatMemberUpdatedFilter(IS_MEMBER >> IS_NOT_MEMBER)
     )
-
-    dp.message.register(check_message)
 
     try:
         await dp.start_polling(bot)
