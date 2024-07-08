@@ -22,7 +22,9 @@ async def stop_bot() -> None:
 
 
 async def on_user_join(event: types.ChatMemberUpdated, bot):
-    await send_captcha(bot, event.chat.id, event.from_user.id, event.from_user.first_name)
+    await send_captcha(
+        bot, event.chat.id, event.from_user.id, event.from_user.first_name
+    )
 
 
 async def on_user_left(event: ChatMemberUpdated) -> None:

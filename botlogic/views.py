@@ -95,14 +95,18 @@ def filtered_message(username: str, message: str) -> str:
             
 <code>{message}</code>"""
 
+
 # Тут мы изменили аргументы для функции
 async def join_message(bot, chat_id, user_id, first_name):
     if user_id not in users_data:
-        await bot.send_message(chat_id,f"""Добро пожаловать в нашу группу, {first_name}!
+        await bot.send_message(
+            chat_id,
+            f"""Добро пожаловать в нашу группу, {first_name}!
 
 Давай знакомиться. 
 
-Расскажи немного о себе, своих увлечениях и о своём пути в программировании.""")
+Расскажи немного о себе, своих увлечениях и о своём пути в программировании.""",
+        )
 
 
 def left_message(first_name: str) -> str:
