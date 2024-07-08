@@ -4,7 +4,13 @@ from aiogram import Dispatcher, F
 from aiogram.filters import Command, ChatMemberUpdatedFilter, IS_NOT_MEMBER, IS_MEMBER
 
 from botlogic.handlers import send_file, simple, weather_fsm, payment
-from botlogic.handlers.events import start_bot, stop_bot, on_user_join, on_user_left, check_captcha
+from botlogic.handlers.events import (
+    start_bot,
+    stop_bot,
+    on_user_join,
+    on_user_left,
+    check_captcha,
+)
 from botlogic.handlers.filter_words import check_message
 from botlogic.settings import bot
 from botlogic.utils.statesform import SendFileSteps, GetWeatherSteps, Captcha
@@ -42,10 +48,6 @@ async def start():
         on_user_left, ChatMemberUpdatedFilter(IS_MEMBER >> IS_NOT_MEMBER)
     )
 
-
-
-
-
     dp.message.register(check_message)
 
     try:
@@ -57,6 +59,6 @@ async def start():
 if __name__ == "__main__":
     try:
         asyncio.run(start())
-    
+
     except KeyboardInterrupt:
-        print('Бот остановлен!')
+        print("Бот остановлен!")

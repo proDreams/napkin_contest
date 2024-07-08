@@ -30,5 +30,5 @@ async def get_by_city(message: Message, state: FSMContext) -> None:
 
 
 async def get_captcha_answer(message: Message, state: FSMContext) -> None:
-    await message.answer('!')
+    await message.answer("!")
     await state.set_state(state=Captcha)
