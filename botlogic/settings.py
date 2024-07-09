@@ -28,10 +28,10 @@ logger.addHandler(file_handler)
 class Secrets(BaseSettings):
     token: SecretStr
     admin_id: int
-    group_id: int 
-    weather_key:SecretStr
+    group_id: int
+    weather_key: SecretStr
     audio_key_id: str
-    audio_key_secret:SecretStr
+    audio_key_secret: SecretStr
     api_url: str = "http://127.0.0.1:8000/bot"
 
     model_config = SettingsConfigDict(
