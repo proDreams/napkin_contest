@@ -1,0 +1,394 @@
+2024-07-09 21:26:27,810 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 21:26:27,884 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 21:27:03,186 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948853 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 21:27:04,660 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948854 is not handled. Duration 1000 ms by bot id=7021722952
+2024-07-09 21:27:04,662 - [ERROR] -  aiogram.event - (dispatcher.py)._process_update(315) - Cause exception while process update id=272948854 by bot id=7021722952
+OperationalError: (sqlite3.OperationalError) unable to open database file
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3300, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 308, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 620, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 352, in connect
+    await_only(connection),
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiosqlite\core.py", line 140, in _connect
+    self._connection = await future
+                       ^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiosqlite\core.py", line 115, in run
+    result = function()
+             ^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiosqlite\core.py", line 392, in connector
+    return sqlite3.connect(loc, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 170, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 170, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "c:\Users\saha\napkin_contest\botlogic\handlers\handler_join_user.py", line 49, in on_user_join
+    await MyRequests.add_new_user(
+  File "c:\Users\saha\napkin_contest\botlogic\data_base\requests.py", line 27, in add_new_user
+    await self.session.commit()
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 1009, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2017, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1302, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1277, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4341, in flush
+    self._flush(objects)
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4476, in _flush
+    with util.safe_reraise():
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4437, in _flush
+    flush_context.execute()
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 60, in save_obj
+    for (
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 223, in _organize_states_for_save
+    for state, dict_, mapper, connection in _connections_for_states(
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1753, in _connections_for_states
+    connection = uowtransaction.transaction.connection(base_mapper)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in connection
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1039, in connection
+    return self._connection_for_bind(bind, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1175, in _connection_for_bind
+    conn = self._parent._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3276, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2440, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3300, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 308, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 620, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 352, in connect
+    await_only(connection),
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiosqlite\core.py", line 140, in _connect
+    self._connection = await future
+                       ^^^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiosqlite\core.py", line 115, in run
+    result = function()
+             ^^^^^^^^^^
+  File "C:\Users\saha\napkin_contest\.venv\Lib\site-packages\aiosqlite\core.py", line 392, in connector
+    return sqlite3.connect(loc, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) unable to open database file
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-07-09 21:30:09,510 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948855 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 21:32:10,373 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 21:32:10,447 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 21:32:25,009 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948856 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 21:32:25,565 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948857 is handled. Duration 327 ms by bot id=7021722952
+2024-07-09 21:32:38,036 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948858 is handled. Duration 15 ms by bot id=7021722952
+2024-07-09 21:32:38,982 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948859 is handled. Duration 406 ms by bot id=7021722952
+2024-07-09 21:32:47,749 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948860 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 21:35:37,860 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 21:35:37,942 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 21:36:15,639 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948861 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 21:36:17,209 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948862 is handled. Duration 1327 ms by bot id=7021722952
+2024-07-09 21:36:30,647 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948863 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 21:36:31,624 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948864 is handled. Duration 500 ms by bot id=7021722952
+2024-07-09 21:36:46,124 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948865 is handled. Duration 15 ms by bot id=7021722952
+2024-07-09 21:39:06,154 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948867 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 21:39:06,354 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948866 is handled. Duration 281 ms by bot id=7021722952
+2024-07-09 21:39:17,578 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948868 is handled. Duration 15 ms by bot id=7021722952
+2024-07-09 21:39:18,550 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948869 is handled. Duration 500 ms by bot id=7021722952
+2024-07-09 21:39:28,076 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948870 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 21:39:31,909 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948871 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 21:39:33,455 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948872 is handled. Duration 125 ms by bot id=7021722952
+2024-07-09 21:43:15,301 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 21:43:15,370 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 21:43:33,139 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948873 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 21:43:34,207 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948874 is handled. Duration 733 ms by bot id=7021722952
+2024-07-09 21:43:37,942 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948875 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 21:43:56,698 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948876 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 21:46:34,474 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948877 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 21:46:34,874 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948878 is handled. Duration 140 ms by bot id=7021722952
+2024-07-09 21:59:57,602 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 21:59:57,675 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:00:26,660 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948879 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:00:27,888 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948880 is handled. Duration 750 ms by bot id=7021722952
+2024-07-09 22:00:33,378 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948881 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:01:27,818 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-09 22:01:28,318 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:01:46,663 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 22:01:46,751 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:01:57,609 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-09 22:01:58,103 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:02:02,007 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 22:02:02,078 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:02:05,968 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948882 is handled. Duration 16 ms by bot id=7021722952
+2024-07-09 22:02:06,330 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948883 is handled. Duration 233 ms by bot id=7021722952
+2024-07-09 22:02:12,144 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948884 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:02:13,029 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948885 is handled. Duration 438 ms by bot id=7021722952
+2024-07-09 22:02:16,692 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948886 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:02:49,407 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-09 22:02:50,072 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:03:10,216 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 22:03:10,302 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:03:10,426 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948887 is handled. Duration 30 ms by bot id=7021722952
+2024-07-09 22:03:10,426 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948889 is handled. Duration 30 ms by bot id=7021722952
+2024-07-09 22:03:10,666 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948888 is handled. Duration 265 ms by bot id=7021722952
+2024-07-09 22:03:11,048 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948890 is handled. Duration 655 ms by bot id=7021722952
+2024-07-09 22:03:48,149 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948891 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:03:51,547 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948892 is handled. Duration 15 ms by bot id=7021722952
+2024-07-09 22:03:54,133 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948893 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:03:58,205 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948894 is handled. Duration 15 ms by bot id=7021722952
+2024-07-09 22:04:06,543 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948895 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:05:05,562 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-09 22:05:06,121 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:05:10,770 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 22:05:10,842 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:05:30,662 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948896 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:05:31,208 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948897 is handled. Duration 280 ms by bot id=7021722952
+2024-07-09 22:05:37,310 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948898 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:05:38,485 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948899 is handled. Duration 640 ms by bot id=7021722952
+2024-07-09 22:05:48,778 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948900 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:05:54,542 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948901 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:07:34,461 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948902 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:08:38,839 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948903 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:08:39,262 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948904 is handled. Duration 172 ms by bot id=7021722952
+2024-07-09 22:15:07,918 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-09 22:15:08,506 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:15:13,802 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 22:15:13,880 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:15:30,178 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948905 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:15:31,355 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948906 is handled. Duration 656 ms by bot id=7021722952
+2024-07-09 22:15:35,796 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948907 is handled. Duration 15 ms by bot id=7021722952
+2024-07-09 22:15:43,988 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948908 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:18:31,689 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948909 is handled. Duration 15 ms by bot id=7021722952
+2024-07-09 22:18:31,998 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948910 is handled. Duration 109 ms by bot id=7021722952
+2024-07-09 22:22:53,855 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-09 22:22:54,404 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:22:59,693 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 22:22:59,772 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:23:16,660 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948911 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:23:17,971 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948912 is handled. Duration 891 ms by bot id=7021722952
+2024-07-09 22:23:23,273 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948913 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:23:47,776 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948914 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:23:48,622 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948915 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:23:50,912 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948916 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:26:18,282 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948917 is handled. Duration 15 ms by bot id=7021722952
+2024-07-09 22:26:18,563 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948918 is handled. Duration 109 ms by bot id=7021722952
+2024-07-09 22:27:23,038 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-09 22:27:23,594 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:27:29,486 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 22:27:29,557 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:27:53,889 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948919 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:27:54,906 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948920 is handled. Duration 579 ms by bot id=7021722952
+2024-07-09 22:28:06,647 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948921 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:28:13,934 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948922 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:28:17,462 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948923 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:28:19,702 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948924 is handled. Duration 15 ms by bot id=7021722952
+2024-07-09 22:29:45,473 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-09 22:29:45,994 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:29:50,978 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 22:29:51,049 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:30:01,780 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948925 is handled. Duration 15 ms by bot id=7021722952
+2024-07-09 22:30:02,267 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948926 is handled. Duration 313 ms by bot id=7021722952
+2024-07-09 22:31:30,366 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948927 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:31:31,442 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948928 is handled. Duration 671 ms by bot id=7021722952
+2024-07-09 22:31:37,664 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948929 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:38:43,787 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-09 22:38:44,281 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:38:49,561 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 22:38:49,629 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:39:56,081 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-09 22:39:56,623 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:40:02,345 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 22:40:02,465 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:40:23,276 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948930 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:40:23,839 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948931 is handled. Duration 280 ms by bot id=7021722952
+2024-07-09 22:40:31,905 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948932 is handled. Duration 15 ms by bot id=7021722952
+2024-07-09 22:40:32,918 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948933 is handled. Duration 484 ms by bot id=7021722952
+2024-07-09 22:40:42,218 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948934 is handled. Duration 16 ms by bot id=7021722952
+2024-07-09 22:40:48,521 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948935 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:40:49,793 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948936 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:41:01,695 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948937 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:41:03,090 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948938 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:41:04,337 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948939 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:43:33,200 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948940 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:43:33,592 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948941 is handled. Duration 125 ms by bot id=7021722952
+2024-07-09 22:52:54,874 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-09 22:52:55,404 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:53:00,518 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(527) - Start polling
+2024-07-09 22:53:00,584 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(341) - Run polling for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'
+2024-07-09 22:53:51,030 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948942 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:53:52,131 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948943 is handled. Duration 655 ms by bot id=7021722952
+2024-07-09 22:54:08,271 - [INFO] -  aiogram.event - (dispatcher.py).feed_update(172) - Update id=272948944 is handled. Duration 0 ms by bot id=7021722952
+2024-07-09 22:54:32,381 - [INFO] -  aiogram.dispatcher - (dispatcher.py).start_polling(554) - Polling stopped
+2024-07-09 22:54:32,881 - [INFO] -  aiogram.dispatcher - (dispatcher.py)._polling(359) - Polling stopped for bot @MyTest_AlexBot id=7021722952 - 'Бот кот на салфетке | Тест'

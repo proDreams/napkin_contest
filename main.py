@@ -1,10 +1,10 @@
 import asyncio
 
 from aiogram import Dispatcher, F
-from aiogram.filters import Command, ChatMemberUpdatedFilter, IS_NOT_MEMBER, IS_MEMBER
+from aiogram.filters import Command
 
 from botlogic.handlers import send_file, simple, weather_fsm, payment
-from botlogic.handlers.events import start_bot, stop_bot, on_user_join, on_user_left
+from botlogic.handlers.events import start_bot, stop_bot
 from botlogic.handlers.filter_words import check_message
 from botlogic.settings import bot
 from botlogic.utils.statesform import SendFileSteps, GetWeatherSteps
@@ -12,16 +12,14 @@ from botlogic.handlers import router as main_handlers_router
 from botlogic.data_base.Engine import async_main
 
 
-dp = Dispatcher()
-
-# Подключение главного роутера к диспетчеру.
-dp.include_router(
-    main_handlers_router,
-)
-
-
 async def start():
+    dp = Dispatcher()
 
+    # Подключение главного роутера к диспетчеру.
+    dp.include_router(
+        main_handlers_router,
+    )
+    
     dp.startup.register(start_bot)
     dp.shutdown.register(stop_bot)
 
