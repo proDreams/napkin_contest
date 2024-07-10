@@ -2,7 +2,6 @@
 
 
 # Импорт необходимых модулей.
-import logging
 
 import asyncio
 
@@ -10,9 +9,8 @@ from datetime import datetime
 
 import random
 
-from aiogram import Router, F
 from aiogram.types import ChatMemberUpdated, BufferedInputFile, Message
-from aiogram.filters import ChatMemberUpdatedFilter, IS_NOT_MEMBER, IS_MEMBER
+
 from aiogram.fsm.state import StatesGroup, State
 from aiogram.fsm.context import FSMContext
 
@@ -25,16 +23,12 @@ from botlogic.settings import bot
 user_timers = {}
 
 
-# Инициализация роутера.
-router = Router(name=__name__)
-
-
 class States(StatesGroup):
     get_answer = State()
 
 
 # Код обработчика события "присоединился к чату".
-@router.chat_member(ChatMemberUpdatedFilter(IS_NOT_MEMBER >> IS_MEMBER))
+
 async def on_user_join(event: ChatMemberUpdated, state: FSMContext) -> None:
     """Приветствие нового участника и отправка фото-капчи,
     занос пользователя в базу данных и включение таймера для пользователя на 3 минуты.
@@ -68,18 +62,17 @@ async def on_user_join(event: ChatMemberUpdated, state: FSMContext) -> None:
 
 
 # Обработчик текстовых сообщений.
-@router.message(States.get_answer, F.text)
 async def get_new_messages(message: Message, state: FSMContext) -> None:
     """Взятие id нового пользователя из базы данных и сравнение его с id отправителя сообщения,
     Проверка ответа нового пользователя, удаление таймера, удаление пользователя из базы данных.
     """
 
     user_id = message.from_user.id
-
+    print(user_id)
     info_about_new_user = await MyRequests.get_user()
-
+    print(info_about_new_user.user_id)
     if user_id == info_about_new_user.user_id:
-        if message.text == str(info_about_new_user.result):
+        if message.text == str(info_about_new_user.result) and not None:
             await message.answer(
                 text=f"Добро пожаловать в нашу группу, <i>{message.from_user.full_name}</i>!\n\n"
                 f"Давай знакомиться: расскажи немного о себе, своих увлечениях и о своём пути в программировании."
@@ -111,3 +104,5 @@ async def get_new_messages(message: Message, state: FSMContext) -> None:
                 del user_timers[user_id]
 
                 await state.clear()
+    else:
+        await state.set_state(States.get_answer)
