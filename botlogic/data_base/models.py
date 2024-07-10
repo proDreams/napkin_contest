@@ -6,11 +6,9 @@ from sqlalchemy import BigInteger, String, Integer
 from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase
 from sqlalchemy.ext.asyncio import AsyncAttrs, async_sessionmaker, create_async_engine
 
-from app.config import DATA_BASE_URL
-
 
 # Инициализация базы данных.
-engine = create_async_engine(DATA_BASE_URL)
+engine = create_async_engine('sqlite+aiosqlite:///botlogic/data_base/data_base.db')
 
 
 # Инициализация асинхронной сессии.

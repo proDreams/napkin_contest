@@ -1,8 +1,14 @@
 import string
 
+from aiogram import Router, F
+
 from botlogic.settings import BAN_WORDS
 
 
+router = Router(name=__name__)
+
+
+@router.message(F.text)
 def check_ban_word(message: str) -> tuple[bool, str]:
     contains_ban_word = False
     message_words = set(
