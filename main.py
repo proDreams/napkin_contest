@@ -10,16 +10,18 @@ from botlogic.settings import bot
 from botlogic.utils.statesform import SendFileSteps, GetWeatherSteps
 from botlogic.handlers import router as main_handlers_router
 from botlogic.data_base.Engine import async_main
+from botlogic.utils import router as main_utils_router
 
 
 async def start():
     dp = Dispatcher()
 
-    # Подключение главного роутера к диспетчеру.
-    dp.include_router(
+    # Подключение главных роутеров к диспетчеру.
+    dp.include_routers(
         main_handlers_router,
+        main_utils_router,
     )
-
+    
     dp.startup.register(start_bot)
     dp.shutdown.register(stop_bot)
 
@@ -37,8 +39,6 @@ async def start():
 
     dp.message.register(weather_fsm.get_weather_command, Command(commands="weather"))
     dp.message.register(weather_fsm.get_by_city, GetWeatherSteps.BY_CITY)
-
-    dp.message.register(check_message)
 
     try:
         await dp.start_polling(bot)

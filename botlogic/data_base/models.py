@@ -8,7 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncAttrs, async_sessionmaker, create_async_
 
 
 # Инициализация базы данных.
-engine = create_async_engine("sqlite+aiosqlite:///botlogic/data_base/data_base.db")
+engine = create_async_engine('sqlite+aiosqlite:///botlogic/data_base/data_base.db')
 
 
 # Инициализация асинхронной сессии.

@@ -53,21 +53,18 @@ async def on_user_join(event: ChatMemberUpdated, state: FSMContext) -> None:
         "отправь сообщение с ответом на задачу в течении <b>3-х</b> минут:\n"
         "<i>Какой результат выражения на изображении?</i>",
     )
-
+    
     await MyRequests.add_new_user(
         user_id=event.new_chat_member.user.id,
         check_captcha="❌",
         time=f"{datetime.now()}",
         result=result,
     )
-    print(f"New user: {event.new_chat_member.user.id}")
 
     user_timers[event.new_chat_member.user.id] = asyncio.create_task(
         check_captcha_timeout(event.new_chat_member.user.id, bot, event)
     )
     await state.set_state(States.get_answer)
-
-    print(f"New user: {event.new_chat_member.user.id}")
 
 
 # Обработчик текстовых сообщений.
@@ -78,16 +75,11 @@ async def get_new_messages(message: Message, state: FSMContext) -> None:
     """
 
     user_id = message.from_user.id
-    print(user_id)
-
-    logging.log(1, f"{user_id}, {message.text}")
 
     info_about_new_user = await MyRequests.get_user()
 
-    await message.answer(f"{info_about_new_user.id}, {info_about_new_user.result}")
-
     if user_id == info_about_new_user.user_id:
-        if message.text == str(info_about_new_user.result) and not None:
+        if message.text == str(info_about_new_user.result):
             await message.answer(
                 text=f"Добро пожаловать в нашу группу, <i>{message.from_user.full_name}</i>!\n\n"
                 f"Давай знакомиться: расскажи немного о себе, своих увлечениях и о своём пути в программировании."
