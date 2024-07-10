@@ -19,11 +19,15 @@ async def start():
     dp.startup.register(start_bot)
     dp.shutdown.register(stop_bot)
 
-    dp.message_reaction.register(check_message)
-
-    dp.chat_member.register(on_user_left, ChatMemberUpdatedFilter(IS_MEMBER >> IS_NOT_MEMBER))
-    dp.chat_member.register(on_user_join, ChatMemberUpdatedFilter(IS_NOT_MEMBER >> IS_MEMBER))
+    dp.chat_member.register(
+        on_user_left, ChatMemberUpdatedFilter(IS_MEMBER >> IS_NOT_MEMBER)
+    )
+    dp.chat_member.register(
+        on_user_join, ChatMemberUpdatedFilter(IS_NOT_MEMBER >> IS_MEMBER)
+    )
     dp.message.register(get_new_messages, States.get_answer)
+
+    dp.message.register(check_message)
 
     dp.pre_checkout_query.register(payment.pre_checkout_handler)
 

@@ -5,7 +5,7 @@ from aiogram import Bot
 from pydantic import SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-BAN_WORDS = set(line.strip() for line in open("res/ban_words.txt"))
+BAN_WORDS = set(line.strip() for line in open("res/ban_words.txt", encoding="utf-8"))
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -28,10 +28,10 @@ logger.addHandler(file_handler)
 class Secrets(BaseSettings):
     token: SecretStr
     admin_id: int
-    group_id: int 
-    weather_key:SecretStr
+    group_id: int
+    weather_key: SecretStr
     audio_key_id: str
-    audio_key_secret:SecretStr
+    audio_key_secret: SecretStr
     api_url: str = "http://127.0.0.1:8000/bot"
 
     model_config = SettingsConfigDict(
