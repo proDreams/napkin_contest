@@ -19,7 +19,7 @@ async def check_captcha_timeout(user_id: int, bot: Bot, event: ChatMemberUpdated
 
     info_about_new_user = await MyRequests.get_user()
 
-    if info_about_new_user is not None:
+    if info_about_new_user.user_id is not None:
         await bot.ban_chat_member(chat_id=event.chat.id, user_id=user_id)
 
         await MyRequests.clear_table()
